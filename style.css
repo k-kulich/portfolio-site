@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    font-family: 'Inter', sans-serif;
+    color: #f0f0f0;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+.glow-text {
+    background: radial-gradient(circle at 0% 50%, #FA37DA, #4C37FA);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Флекс-обёртка для текста и фото */
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.hero-photo {
+    flex-shrink: 0;
+}
+
+.photo-frame {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FA37DA, #4C37FA);
+    padding: 4px;
+    box-shadow: 0 0 30px rgba(250,55,218,0.4);
+    transition: transform 0.3s ease;
+}
+
+.photo-frame:hover {
+    transform: scale(1.02);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    background-color: #111;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 850px) {
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-photo {
+        margin-top: 20px;
+    }
+    .btn-group {
+        justify-content: center;
+    }
+}
+
+.cover {
+    width: 100%;
+    max-width: 1200px;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background: linear-gradient(#000, #000) padding-box,
+                radial-gradient(circle at 20% 30%, #FA37DA, #4C37FA) border-box;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(250, 55, 218, 0.25), 0 0 0 1px rgba(76, 55, 250, 0.2);
+    padding: 60px 40px;
+}
+
+.cover::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #FA37DA 0%, transparent 70%);
+    opacity: 0.35;
+    filter: blur(70px);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.cover::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, #4C37FA 0%, transparent 70%);
+    opacity: 0.35;
+    filter: blur(70px);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 10vw, 80px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    background: radial-gradient(circle at 0% 50%, #FA37DA, #4C37FA);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 16px;
+}
+
+.hero-tagline {
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 600;
+    color: #E9E9E9;
+    margin-bottom: 24px;
+}
+
+.hero-desc {
+    font-size: 18px;
+    max-width: 700px;
+    color: #ccc;
+    margin-bottom: 32px;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 60px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+    border: 1.5px solid rgba(250,55,218,0.6);
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    color: white;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(95deg, #FA37DA, #4C37FA);
+    border: none;
+    box-shadow: 0 4px 12px rgba(76,55,250,0.3);
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(250,55,218,0.4);
+}
+
+.btn-outline:hover {
+    background: rgba(250,55,218,0.2);
+    border-color: #FA37DA;
+}
+
+/* секции */
+section {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.section-sub {
+    text-align: center;
+    font-size: 18px;
+    color: #bfbfbf;
+    margin-bottom: 48px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* проекты */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 32px;
+}
+
+.project-card {
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(2px);
+    border-radius: 28px;
+    padding: 24px;
+    border: 1px solid rgba(250,55,218,0.25);
+    transition: all 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #FA37DA;
+    box-shadow: 0 20px 30px -12px rgba(250,55,218,0.2);
+}
+
+.project-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.project-tech {
+    font-size: 13px;
+    color: #FA37DA;
+    background: rgba(250,55,218,0.15);
+    padding: 4px 12px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.project-desc {
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+/* навыки — табы */
+.skills-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(250,55,218,0.4);
+    padding: 10px 24px;
+    border-radius: 60px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #ddd;
+}
+
+.tab-btn.active {
+    background: linear-gradient(95deg, #FA37DA, #4C37FA);
+    border-color: transparent;
+    color: white;
+}
+
+.skills-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.skills-content.active-content {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.skill-badge {
+    background: rgba(255,255,255,0.05);
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-size: 15px;
+    border: 1px solid rgba(250,55,218,0.3);
+    transition: 0.2s;
+}
+
+.skill-badge:hover {
+    border-color: #FA37DA;
+}
+
+/* таймлайн */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.timeline-item {
+    background: rgba(10,10,15,0.6);
+    border-radius: 28px;
+    padding: 24px;
+    border-left: 4px solid #FA37DA;
+}
+
+.timeline-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.timeline-sub {
+    color: #FA37DA;
+    margin: 8px 0;
+}
+
+/* контакты */
+.contacts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background: rgba(10,10,15,0.7);
+    border-radius: 28px;
+    padding: 24px 32px;
+    text-align: center;
+    min-width: 200px;
+    border: 1px solid rgba(250,55,218,0.3);
+    transition: 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    border-color: #FA37DA;
+}
+
+.contact-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.contact-link {
+    color: #ddd;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* адаптивность */
+@media (max-width: 750px) {
+    .cover {
+        padding: 40px 24px;
+    }
+    .section-title {
+        font-size: 32px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.small-text {
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* Добавить в конец файла style.css */
+pre {
+    background: #0a0a0c;
+    border: 1px solid rgba(250,55,218,0.3);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre a {
+    color: #FA37DA;
+}
+
+.benefits-grid .benefit-item {
+    transition: transform 0.2s;
+}
+.benefits-grid .benefit-item:hover {
+    transform: translateY(-5px);
+}

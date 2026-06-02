@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  portfolio-site:
+    build: .
+    container_name: ksenia-portfolio
+    ports:
+      - "8080:80"
+    restart: unless-stopped
