@@ -2,19 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Ксения Кулиш | Разработчик · Репетитор</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
 
-<!-- ========== HEADER ========== -->
 <header class="site-header">
     <div class="container header-container">
-        <div class="logo">
-            <a href="index.html">Ксения Кулиш</a>
-        </div>
+        <div class="logo"><a href="index.html">Ксения Кулиш</a></div>
         <nav class="main-nav">
             <a href="index.html" class="nav-link">IT-портфолио</a>
             <a href="tutoring.html" class="nav-link">Репетиторство</a>
@@ -22,14 +19,13 @@
     </div>
 </header>
 
-<!-- ========== HERO ========== -->
 <div class="hero">
     <div class="cover">
         <div class="hero-wrapper">
             <div class="hero-content">
                 <h1>Ксения Кулиш</h1>
-                <div class="hero-tagline">C++ / Python Developer · UI/UX · Репетитор</div>
-                <div class="hero-desc">
+                <div class="hero-tagline" id="hero-tagline">C++ / Python Developer · UI/UX · Репетитор</div>
+                <div class="hero-desc" id="hero-desc">
                     Студентка ИТМО (2 курс). 3 года фриланса и репетиторства. Разрабатываю десктопные приложения, парсеры, ботов, а ещё учу школьников и студентов математике, физике, информатике и программированию.
                 </div>
                 <div class="btn-group">
@@ -40,196 +36,72 @@
             </div>
             <div class="hero-photo">
                 <div class="photo-frame">
-                    <img src="photo.jpeg" alt="Ксения Кулиш">
+                    <img id="main-photo" src="photo.jpg" alt="Ксения Кулиш">
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-    <main>
-        <!-- Образование и опыт -->
-        <section>
-            <div class="container">
-                <div class="section-title">Образование & <span class="glow-text">Опыт</span></div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-title">НИУ ИТМО</div>
-                        <div class="timeline-sub">Факультет прикладной информатики, “Мобильные и сетевые технологии” (2026–2028, бакалавриат)</div>
-                        <div>Перевелась с направления “Разработка ПО” (2024–2025). 2 курс, очно.</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">Яндекс.Лицей</div>
-                        <div class="timeline-sub">“Промышленное программирование на Python” (2021–2023) — сертификат с отличием</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">Фриланс + Репетиторство + Контейнеризация</div>
-                        <div class="timeline-sub">3+ года на биржах, удалённая подготовка, Docker-упаковка своих проектов</div>
-                        <div>Разработка заказных проектов (парсинг, боты, GUI), внедрение Docker для воспроизводимого окружения.</div>
-                    </div>
-                </div>
+<main>
+    <!-- Секция образования -->
+    <section id="education-section">
+        <div class="container">
+            <div class="section-title">Образование & <span class="glow-text">Опыт</span></div>
+            <div class="timeline" id="education-timeline"></div>
+        </div>
+    </section>
+
+    <!-- Секция проектов -->
+    <section id="projects-section">
+        <div class="container">
+            <div class="section-title">Избранные <span class="glow-text">проекты</span></div>
+            <div class="section-sub">Десктопные приложения, телеграм-боты, парсеры, контейнеризация</div>
+            <div class="projects-grid" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- Секция навыков (табы) -->
+    <section>
+        <div class="container">
+            <div class="section-title">Технический <span class="glow-text">арсенал</span></div>
+            <div class="skills-tabs">
+                <button class="tab-btn active" data-tab="python">🐍 Python</button>
+                <button class="tab-btn" data-tab="cpp">⚙️ C++</button>
+                <button class="tab-btn" data-tab="design">🎨 UI/UX & Дизайн</button>
+                <button class="tab-btn" data-tab="devops">🐳 DevOps / Frontend</button>
             </div>
-        </section>
+            <div id="python" class="skills-content active-content"></div>
+            <div id="cpp" class="skills-content"></div>
+            <div id="design" class="skills-content"></div>
+            <div id="devops" class="skills-content"></div>
+        </div>
+    </section>
 
-        <!-- Проекты (добавлены технологии Docker/Node.js) -->
-        <section id="projects">
-            <div class="container">
-                <div class="section-title">Избранные <span class="glow-text">проекты</span></div>
-                <div class="section-sub">Десктопные приложения, телеграм-боты, парсеры, контейнеризация</div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-title">Десктопный парсер учебных материалов <span class="project-tech">PyQt5, SQL, Docker</span></div>
-                        <div class="project-desc">Оконное приложение для автоматического сбора расписания. Упаковано в Docker-образ для простоты развёртывания на любом ПК.</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title">Backend «MindGarden» <span class="project-tech">FastAPI, PostgreSQL, Docker</span></div>
-                        <div class="project-desc">REST API для учебного веб-приложения. Написаны Dockerfile и docker-compose для локального запуска с БД.</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title">Telegram-бот для парсинга Avito <span class="project-tech">aiogram, Playwright, Docker</span></div>
-                        <div class="project-desc">Бот с админ-панелью, полностью контейнеризирован. Используется docker-compose для связки с PostgreSQL.</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title">Тренажёр ЕГЭ по информатике <span class="project-tech">PyQt5, Selenium, SQLAlchemy</span></div>
-                        <div class="project-desc">Десктопное приложение. Dockerfile позволяет запустить его в изолированной среде Linux.</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title">Парсер способов пополнения казино <span class="project-tech">Playwright, SQLAlchemy, Docker</span></div>
-                        <div class="project-desc">Сбор данных с обходом антибота. Docker-версия для запуска по расписанию в облаке.</div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-title">Игра-платформер (Hollow Knight style) <span class="project-tech">Pygame, CI/CD</span></div>
-                        <div class="project-desc">Настроены GitHub Actions для автоматической сборки Docker-образа при пуше в main.</div>
-                    </div>
-                </div>
+    <!-- Soft skills (оставим статическими, но можно тоже вынести в JSON) -->
+    <section>
+        <div class="container">
+            <div class="section-title">Soft <span class="glow-text">skills</span></div>
+            <div class="skills-list" id="soft-skills-list" style="justify-content: center;">
+                <!-- Заполнится из JSON -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ТЕХНИЧЕСКИЙ АРСЕНАЛ (добавлен таб DevOps/Frontend) -->
-        <section>
-            <div class="container">
-                <div class="section-title">Технический <span class="glow-text">арсенал</span></div>
-                <div class="skills-tabs">
-                    <button class="tab-btn active" data-tab="python">🐍 Python</button>
-                    <button class="tab-btn" data-tab="cpp">⚙️ C++</button>
-                    <button class="tab-btn" data-tab="design">🎨 UI/UX & Дизайн</button>
-                    <button class="tab-btn" data-tab="devops">🐳 DevOps / Frontend</button>
-                    <button class="tab-btn" data-tab="other">🧰 Дополнительно</button>
-                </div>
+    <!-- Контакты -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">Свяжитесь со <span class="glow-text">мной</span></div>
+            <div class="contacts-grid" id="contacts-grid"></div>
+        </div>
+    </section>
+</main>
 
-                <div id="python" class="skills-content active-content">
-                    <div class="skills-list">
-                        <span class="skill-badge">asyncio / aiohttp</span>
-                        <span class="skill-badge">BeautifulSoup / Selenium</span>
-                        <span class="skill-badge">Playwright</span>
-                        <span class="skill-badge">FastAPI / REST API</span>
-                        <span class="skill-badge">SQLAlchemy / Alembic</span>
-                        <span class="skill-badge">PyQt5 / Qt Designer</span>
-                        <span class="skill-badge">python-telegram-bot / aiogram</span>
-                        <span class="skill-badge">NumPy / Matplotlib</span>
-                        <span class="skill-badge">Pytest / unittest</span>
-                        <span class="skill-badge">Docker / docker-compose</span>
-                    </div>
-                </div>
-                <div id="cpp" class="skills-content">
-                    <div class="skills-list">
-                        <span class="skill-badge">C++17/20 (RAII, move-семантика)</span>
-                        <span class="skill-badge">STL / шаблоны / лямбды</span>
-                        <span class="skill-badge">Многопоточность (std::thread, mutex)</span>
-                        <span class="skill-badge">WinAPI / работа с памятью</span>
-                        <span class="skill-badge">Google Test (unit-тесты)</span>
-                        <span class="skill-badge">CMake / кросс-платформенность</span>
-                        <span class="skill-badge">Алгоритмы и структуры данных</span>
-                    </div>
-                </div>
-                <div id="design" class="skills-content">
-                    <div class="skills-list">
-                        <span class="skill-badge">Figma (components, auto layout, variants)</span>
-                        <span class="skill-badge">Дизайн-системы / прототипирование</span>
-                        <span class="skill-badge">Адаптивный дизайн (web/mobile)</span>
-                        <span class="skill-badge">Adobe Photoshop / Illustrator</span>
-                        <span class="skill-badge">Взаимодействие с разработчиками</span>
-                        <span class="skill-badge">Презентации и дизайн-документация</span>
-                    </div>
-                </div>
-                <div id="devops" class="skills-content">
-                    <div class="skills-list">
-                        <span class="skill-badge">Docker / Docker Compose</span>
-                        <span class="skill-badge">Node.js / Express</span>
-                        <span class="skill-badge">TypeScript</span>
-                        <span class="skill-badge">React + Vite</span>
-                        <span class="skill-badge">Nginx (как reverse-proxy)</span>
-                        <span class="skill-badge">CI/CD (GitHub Actions)</span>
-                        <span class="skill-badge">Nginx Unit / статическая сборка</span>
-                        <span class="skill-badge">Git (advanced: rebase, submodules)</span>
-                    </div>
-                </div>
-                <div id="other" class="skills-content">
-                    <div class="skills-list">
-                        <span class="skill-badge">Bash / Linux CLI</span>
-                        <span class="skill-badge">Мобильные прокси / обход блокировок</span>
-                        <span class="skill-badge">SQL (PostgreSQL, SQLite, MySQL)</span>
-                        <span class="skill-badge">Nginx (виртуальные хосты)</span>
-                        <span class="skill-badge">Английский B2 (технический)</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Soft skills -->
-        <section>
-            <div class="container">
-                <div class="section-title">Soft <span class="glow-text">skills</span></div>
-                <div class="skills-list" style="justify-content: center;">
-                    <span class="skill-badge">Самообучение</span>
-                    <span class="skill-badge">Ответственность</span>
-                    <span class="skill-badge">Организованность</span>
-                    <span class="skill-badge">Коммуникабельность</span>
-                    <span class="skill-badge">Восприятие критики</span>
-                    <span class="skill-badge">Стрессоустойчивость</span>
-                    <span class="skill-badge">Пунктуальность</span>
-                    <span class="skill-badge">Работа в команде</span>
-                    <span class="skill-badge">Аналитическое мышление</span>
-                    <span class="skill-badge">Внимание к деталям</span>
-                    <span class="skill-badge">Обучаемость</span>
-                    <span class="skill-badge">Публичные выступления</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Контакты -->
-        <section id="contact">
-            <div class="container">
-                <div class="section-title">Свяжитесь со <span class="glow-text">мной</span></div>
-                <div class="section-sub">Готова к работе в офисе, удалённо или гибридному формату. Открыта для fullstack / devops стажировок.</div>
-                <div class="contacts-grid">
-                    <div class="contact-card">
-                        <div class="contact-icon">📧</div>
-                        <a href="mailto:kseniakulis45769@gmail.com" class="contact-link">kseniakulis45769@gmail.com</a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">📱</div>
-                        <a href="tel:+79811730308" class="contact-link">+7 (996) 762 53-49</a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">💬</div>
-                        <a href="https://t.me/TheYoungCynic" target="_blank" class="contact-link">Telegram</a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-icon">🐙</div>
-                        <a href="https://github.com/k-kulich" target="_blank" class="contact-link">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
+<footer class="footer">
     <div class="container">
         <div>© 2025 Ксения Кулиш — разработчик, репетитор</div>
         <div class="small-text">Санкт-Петербург | ИТМО | Уроки онлайн</div>
     </div>
 </footer>
-
 </body>
 </html>
