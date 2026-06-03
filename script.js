@@ -25,3 +25,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Подсветка активного пункта меню
+const currentLocation = window.location.pathname;
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href');
+    if (currentLocation.endsWith(linkPath) || (currentLocation === '/' && linkPath === 'index.html')) {
+        link.classList.add('active');
+    } else if (currentLocation.endsWith('tutoring.html') && linkPath === 'tutoring.html') {
+        link.classList.add('active');
+    }
+});

@@ -1,0 +1,42 @@
+{
+  "education": [
+    {
+      "title": "НИУ ИТМО",
+      "subtitle": "Факультет прикладной информатики, “Мобильные и сетевые технологии” (2026–2028)",
+      "description": "Перевелась с направления “Разработка ПО” (2024–2025). 2 курс, очно."
+    },
+    {
+      "title": "Яндекс.Лицей",
+      "subtitle": "“Промышленное программирование на Python” (2021–2023) — сертификат с отличием",
+      "description": ""
+    },
+    {
+      "title": "Фриланс + Репетиторство",
+      "subtitle": "3+ года на биржах и удалённая подготовка школьников к экзаменам",
+      "description": "Разработка заказных проектов (парсинг, боты, GUI), преподавание Python и основ программирования."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Десктопный парсер учебных материалов",
+      "tech": "PyQt5, SQL, Docker",
+      "description": "Оконное приложение для автоматического сбора расписания. Упаковано в Docker-образ."
+    },
+    {
+      "title": "Backend «MindGarden»",
+      "tech": "FastAPI, PostgreSQL, Docker",
+      "description": "REST API для учебного веб-приложения. Написаны Dockerfile и docker-compose."
+    },
+    {
+      "title": "Telegram-бот для парсинга Avito",
+      "tech": "aiogram, Playwright, Docker",
+      "description": "Бот с админ-панелью, контейнеризирован. docker-compose с PostgreSQL."
+    }
+  ],
+  "skills": {
+    "python": ["asyncio", "FastAPI", "PyQt5", "Docker"],
+    "cpp": ["C++17/20", "STL", "Multithreading", "RAII"],
+    "design": ["Figma", "Photoshop", "Auto layout", "Прототипирование"],
+    "devops": ["Docker Compose", "GitHub Actions", "Nginx", "CI/CD"]
+  }
+}

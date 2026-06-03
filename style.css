@@ -432,3 +432,151 @@ pre a {
 .benefits-grid .benefit-item:hover {
     transform: translateY(-5px);
 }
+
+/* ========== HEADER ========== */
+.site-header {
+    position: sticky;
+    top: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(250, 55, 218, 0.3);
+    z-index: 100;
+    padding: 16px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 700;
+    background: radial-gradient(circle at 0% 50%, #FA37DA, #4C37FA);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-link {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    color: #FA37DA;
+    border-bottom-color: #FA37DA;
+}
+
+.nav-link.active {
+    color: #FA37DA;
+    border-bottom-color: #FA37DA;
+}
+
+/* ========== ОТЗЫВЫ ========== */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.review-card {
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(2px);
+    border-radius: 28px;
+    padding: 24px;
+    border: 1px solid rgba(250, 55, 218, 0.3);
+    transition: transform 0.2s;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: #FA37DA;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.review-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FA37DA, #4C37FA);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.review-info h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.review-date {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.review-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+/* ========== ПРЕИМУЩЕСТВА РЕПЕТИТОРСТВА ========== */
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.adv-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 28px;
+    border: 1px solid rgba(250,55,218,0.2);
+}
+
+.adv-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.adv-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+/* ========== КНОПКИ ========== */
+.btn-block {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.btn-large {
+    padding: 14px 42px;
+    font-size: 18px;
+}
