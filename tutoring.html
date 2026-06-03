@@ -51,11 +51,18 @@
         </div>
     </section>
 
-    <!-- Отзывы -->
+    <!-- Отзывы (карусель) -->
     <section id="reviews">
         <div class="container">
             <div class="section-title">Что говорят <span class="glow-text">ученики</span></div>
-            <div class="reviews-grid" id="reviews-grid"></div>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="reviews-track"></div>
+                </div>
+                <button class="carousel-btn prev" id="prevReview">‹</button>
+                <button class="carousel-btn next" id="nextReview">›</button>
+            </div>
+            <div class="carousel-dots" id="reviewDots"></div>
             <div class="btn-block">
                 <a href="#contact" class="btn btn-primary btn-large">Хочу так же →</a>
             </div>

@@ -31,13 +31,34 @@
       "title": "Telegram-бот для парсинга Avito",
       "tech": "aiogram, Playwright, Docker",
       "description": "Бот с админ-панелью, контейнеризирован. docker-compose с PostgreSQL."
+    },
+    {
+      "title": "Тренажёр ЕГЭ по информатике",
+      "tech": "PyQt5, Selenium, SQLAlchemy",
+      "description": "Десктопное приложение. Dockerfile позволяет запустить его в изолированной среде."
+    },
+    {
+      "title": "Парсер способов пополнения казино",
+      "tech": "Playwright, SQLAlchemy, Docker",
+      "description": "Сбор данных с обходом антибота. Docker-версия для запуска по расписанию в облаке."
+    },
+    {
+      "title": "Игра-платформер (Hollow Knight style)",
+      "tech": "Pygame, CI/CD",
+      "description": "Настроены GitHub Actions для автоматической сборки Docker-образа при пуше в main."
     }
   ],
   "skills": {
-    "python": ["asyncio", "FastAPI", "PyQt5", "Docker"],
-    "cpp": ["C++17/20", "STL", "Multithreading", "RAII"],
-    "design": ["Figma", "Photoshop", "Auto layout", "Прототипирование"],
-    "devops": ["Docker Compose", "GitHub Actions", "Nginx", "CI/CD"]
+    "python": ["asyncio", "aiohttp", "FastAPI / REST API", "PyQt5 / Qt Designer", "BeautifulSoup / Selenium", "Playwright", "SQLAlchemy / Alembic",
+               "python-telegram-bot / aiogram", "NumPy / Matplotlib", "Pytest / unittest", "Docker / docker-compose"],
+    "cpp": ["C++17/20 (RAII, move-семантика)", "STL / шаблоны / лямбды", "Многопоточность (std::thread, mutex)", 
+            "Google Test (unit-тесты)", "CMake / кросс-платформенность", "Алгоритмы и структуры данных"],
+    "design": ["Figma (components, auto layout, variants)", "Дизайн-системы / прототипирование", "Адаптивный дизайн (web/mobile)",
+              "Adobe Photoshop / Illustrator", "Взаимодействие с разработчиками", "Презентации и дизайн-документация"],
+    "devops": ["Docker / Docker Compose", "Node.js / Express", "TypeScript", "React", "Nginx (как reverse-proxy)", 
+               "CI/CD (GitHub Actions)", "Nginx Unit / статическая сборка", "Git (advanced: rebase, submodules)"],
+    "other": ["Bash / Linux CLI", "Мобильные прокси / обход блокировок", "SQL (PostgreSQL, SQLite, MySQL)", "Nginx (виртуальные хосты)",
+              "Английский B2 (технический)"]
   },
   "softSkills": [
     "Самообучение", "Ответственность", "Организованность", "Коммуникабельность",

@@ -580,3 +580,99 @@ pre a {
     padding: 14px 42px;
     font-size: 18px;
 }
+
+/* ========== КАРУСЕЛЬ ОТЗЫВОВ ========== */
+.carousel-container {
+    position: relative;
+    margin: 40px 0;
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+.carousel-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.3s ease;
+}
+
+.review-card {
+    flex: 0 0 calc(33.333% - 20px);
+    min-width: 280px;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(2px);
+    border-radius: 28px;
+    padding: 24px;
+    border: 1px solid rgba(250, 55, 218, 0.3);
+    transition: transform 0.2s;
+}
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: #FA37DA;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.7);
+    border: 1px solid rgba(250,55,218,0.6);
+    color: white;
+    font-size: 32px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    z-index: 2;
+    transition: 0.2s;
+}
+.carousel-btn:hover {
+    background: linear-gradient(95deg, #FA37DA, #4C37FA);
+    border-color: transparent;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.dot.active {
+    background: #FA37DA;
+    width: 24px;
+    border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+    .review-card {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+@media (max-width: 600px) {
+    .review-card {
+        flex: 0 0 100%;
+    }
+}
