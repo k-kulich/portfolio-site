@@ -67,110 +67,35 @@ function renderAdvantages(containerId, advantagesArray) {
     `).join('');
 }
 
-function renderReviews(containerId, reviewsArray) {
-    const track = document.getElementById(containerId);
-    if (!track) return;
-
-    // Очищаем трек
-    track.innerHTML = '';
-    // Создаём карточки отзывов
-    reviewsArray.forEach((rev, index) => {
-        const card = document.createElement('div');
-        card.className = 'review-card';
-        card.innerHTML = `
-            <div class="review-header">
-                <div class="review-avatar">${rev.avatarLetter}</div>
-                <div class="review-info">
-                    <h4>${rev.name}</h4>
-                    <div class="review-date">${rev.date}</div>
+function renderReviews(swiperWrapperId, reviewsArray) {
+    const wrapper = document.getElementById(swiperWrapperId);
+    if (!wrapper) return;
+    wrapper.innerHTML = reviewsArray.map(rev => `
+        <div class="swiper-slide">
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">${rev.avatarLetter}</div>
+                    <div class="review-info">
+                        <h4>${rev.name}</h4>
+                        <div class="review-date">${rev.date}</div>
+                    </div>
                 </div>
+                <div class="review-text">${rev.text}</div>
             </div>
-            <div class="review-text">${rev.text}</div>
-        `;
-        track.appendChild(card);
-    });
-
-    // Инициализация карусели после рендера
-    initCarousel();
-}
-
-let currentIndex = 0;
-let totalSlides = 0;
-let slideWidth = 0;
-
-function initCarousel() {
-    const track = document.getElementById('reviews-track');
-    if (!track) return;
-    const cards = track.querySelectorAll('.review-card');
-    totalSlides = cards.length;
-    if (totalSlides === 0) return;
-
-    // Определяем количество видимых карточек в зависимости от ширины экрана
-    function getVisibleCards() {
-        if (window.innerWidth <= 600) return 1;
-        if (window.innerWidth <= 900) return 2;
-        return 3;
-    }
-
-    function updateCarousel() {
-        const visible = getVisibleCards();
-        const cardWidth = track.firstChild ? track.firstChild.offsetWidth : 0;
-        const gap = 30; // из CSS gap
-        slideWidth = cardWidth + gap;
-        const maxIndex = Math.max(0, totalSlides - visible);
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-
-        // Обновить точки
-        const dotsContainer = document.getElementById('reviewDots');
-        if (dotsContainer) {
-            dotsContainer.innerHTML = '';
-            const dotsCount = Math.ceil(totalSlides / visible);
-            for (let i = 0; i < dotsCount; i++) {
-                const dot = document.createElement('span');
-                dot.classList.add('dot');
-                if (i === Math.floor(currentIndex / visible)) dot.classList.add('active');
-                dot.addEventListener('click', () => {
-                    currentIndex = i * visible;
-                    updateCarousel();
-                });
-                dotsContainer.appendChild(dot);
-            }
+        </div>
+    `).join('');
+    
+    // Инициализируем Swiper после того, как DOM обновился
+    new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        breakpoints: {
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
         }
-    }
-
-    // При ресайзе пересчитываем
-    window.addEventListener('resize', () => {
-        currentIndex = 0;
-        updateCarousel();
     });
-
-    // Кнопки
-    const prevBtn = document.getElementById('prevReview');
-    const nextBtn = document.getElementById('nextReview');
-    if (prevBtn) {
-        prevBtn.onclick = () => {
-            const visible = getVisibleCards();
-            if (currentIndex > 0) {
-                currentIndex -= visible;
-                if (currentIndex < 0) currentIndex = 0;
-                updateCarousel();
-            }
-        };
-    }
-    if (nextBtn) {
-        nextBtn.onclick = () => {
-            const visible = getVisibleCards();
-            const maxIndex = Math.max(0, totalSlides - visible);
-            if (currentIndex < maxIndex) {
-                currentIndex += visible;
-                if (currentIndex > maxIndex) currentIndex = maxIndex;
-                updateCarousel();
-            }
-        };
-    }
-
-    updateCarousel();
 }
 
 // === ЗАГРУЗКА ДЛЯ СТРАНИЦЫ ПОРТФОЛИО (INDEX) ===
@@ -213,7 +138,7 @@ async function loadTutoringPage() {
         // Преимущества
         renderAdvantages('advantages-grid', tutoring.advantages);
         // Отзывы
-        renderReviews('reviews-grid', tutoring.reviews);
+        renderReviews('reviews-swiper-wrapper', tutoring.reviews);
         // Контакты (можно использовать те же, что и в common)
         renderContacts('tutoring-contacts-grid', common.contacts);
         

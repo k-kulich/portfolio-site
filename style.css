@@ -676,3 +676,16 @@ pre a {
         flex: 0 0 100%;
     }
 }
+
+.swiper {
+    padding: 20px 0 50px;
+}
+.review-card {
+    height: auto;
+}
+.swiper-button-prev, .swiper-button-next {
+    color: #FA37DA;
+}
+.swiper-pagination-bullet-active {
+    background: #FA37DA;
+}

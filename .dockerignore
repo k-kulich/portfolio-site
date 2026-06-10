@@ -1,6 +1,6 @@
 .git
 .gitignore
-*.md
+README.md
 .DS_Store
 *.log
-docker-compose.yml   # (можно исключить, если не нужен внутри образа)
+docker-compose.yml

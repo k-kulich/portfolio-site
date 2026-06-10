@@ -6,6 +6,8 @@
     <title>Ксения Кулиш | Репетитор онлайн</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
 
@@ -51,18 +53,16 @@
         </div>
     </section>
 
-    <!-- Отзывы (карусель) -->
+    <!-- Отзывы (Swiper carousel) -->
     <section id="reviews">
         <div class="container">
             <div class="section-title">Что говорят <span class="glow-text">ученики</span></div>
-            <div class="carousel-container">
-                <div class="carousel-wrapper">
-                    <div class="carousel-track" id="reviews-track"></div>
-                </div>
-                <button class="carousel-btn prev" id="prevReview">‹</button>
-                <button class="carousel-btn next" id="nextReview">›</button>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="reviews-swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <div class="carousel-dots" id="reviewDots"></div>
             <div class="btn-block">
                 <a href="#contact" class="btn btn-primary btn-large">Хочу так же →</a>
             </div>
