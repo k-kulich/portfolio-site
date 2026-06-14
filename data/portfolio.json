@@ -18,13 +18,13 @@
   ],
   "projects": [
     {
-      "title": "Десктопный парсер учебных материалов",
-      "tech": "PyQt5, SQL, Docker",
-      "description": "Оконное приложение для автоматического сбора расписания. Упаковано в Docker-образ."
+      "title": "Десктопный парсер учебных материалов (.exe)",
+      "tech": "PyQt5, SQL, Docker, PyInstaller",
+      "description": "Оконное приложение с Графическим интерфейсом для автоматического сбора расписания. Упаковано в Docker-образ."
     },
     {
       "title": "Backend «MindGarden»",
-      "tech": "FastAPI, PostgreSQL, Docker",
+      "tech": "FastAPI, PostgreSQL, Docker, SQLAlchemy",
       "description": "REST API для учебного веб-приложения. Написаны Dockerfile и docker-compose."
     },
     {
@@ -38,9 +38,9 @@
       "description": "Десктопное приложение. Dockerfile позволяет запустить его в изолированной среде."
     },
     {
-      "title": "Парсер способов пополнения казино",
+      "title": "Парсер доменов с обходом Cloudflare",
       "tech": "Playwright, SQLAlchemy, Docker",
-      "description": "Сбор данных с обходом антибота. Docker-версия для запуска по расписанию в облаке."
+      "description": "Сбор и проверка данных с обходом антибота. Docker-версия для запуска по расписанию в облаке."
     },
     {
       "title": "Игра-платформер (Hollow Knight style)",
