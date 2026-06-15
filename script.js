@@ -22,10 +22,38 @@ function renderProjects(containerId, projectsArray) {
     if (!container) return;
     container.innerHTML = projectsArray.map(proj => `
         <div class="project-card">
-            <div class="project-title">${proj.title} <span class="project-tech">${proj.tech}</span></div>
-            <div class="project-desc">${proj.description}</div>
+            <div class="project-title">${proj.title}</div>
+            <div class="project-desc">${proj.description.map(ite => `<p>${ite}</p>`).join('')}</div>
+            <div class="project-skill-list">${proj.tech.map(ite => `<span class="project-tech">${ite}</span>`).join('')}</div>
         </div>
     `).join('');
+}
+
+function renderCases(swiperWrapperId, casesArray) {
+    const wrapper = document.getElementById(swiperWrapperId);
+    if (!wrapper) return;
+    wrapper.innerHTML = casesArray.map(caseItem => `
+    <div class="swiper-slide">
+        <div class="case-card">
+            <div class="case-title">${caseItem.title}</div>
+            <div class="case-title-p">Задача</div>
+            <div class="case-text-block">${caseItem.task}</div>
+            <div class="case-title-p">Моё решение</div>
+            <div class="case-text-block">${caseItem.solution.map(point => `<p>${point}</p>`).join('')}</div>
+            <div class="case-title-p">Результат</div>
+            <div class="case-text-block">${caseItem.result}</div>
+            <div class="case-skill-list">${caseItem.tech.map(ite => `<span class="case-tech">${ite}</span>`).join('')}</div>
+        </div>
+    </div>
+    `).join('');
+    
+    // Инициализация Swiper – всегда 1 слайд
+    new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+    });
 }
 
 function renderSkills(skillsObject) {
@@ -108,12 +136,14 @@ async function loadPortfolioPage() {
         renderEducation('education-timeline', portfolio.education);
         // Проекты
         renderProjects('projects-grid', portfolio.projects);
+        // Кейсы
+        renderCases('cases-swiper-wrapper', portfolio.cases);
         // Навыки (табы)
-        renderSkills(portfolio.skills);
+        // renderSkills(portfolio.skills);
         // Soft skills
-        if (portfolio.softSkills) {
-            renderSoftSkills('soft-skills-list', portfolio.softSkills);
-        }
+        // if (portfolio.softSkills) {
+        //     renderSoftSkills('soft-skills-list', portfolio.softSkills);
+        // }
         // Контакты
         renderContacts('contacts-grid', common.contacts);
         

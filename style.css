@@ -139,9 +139,9 @@ body {
 }
 
 .hero h1 {
-    font-size: clamp(48px, 10vw, 80px);
+    font-size: clamp(30px, 5vw, 50px);
     font-weight: 800;
-    letter-spacing: -2px;
+    letter-spacing: 0px;
     background: radial-gradient(circle at 0% 50%, #FA37DA, #4C37FA);
     background-clip: text;
     -webkit-background-clip: text;
@@ -237,6 +237,8 @@ section {
     padding: 24px;
     border: 1px solid rgba(250,55,218,0.25);
     transition: all 0.25s ease;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .project-card:hover {
@@ -256,19 +258,101 @@ section {
 }
 
 .project-tech {
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 500;
     color: #FA37DA;
-    background: rgba(250,55,218,0.15);
-    padding: 4px 12px;
-    border-radius: 30px;
-    display: inline-block;
+    background: rgba(250, 55, 218, 0.12);
+    padding: 6px 14px;
+    border-radius: 40px;
+    letter-spacing: -0.2px;
+    transition: 0.2s;
+    backdrop-filter: blur(2px);
+}
+
+.project-skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
 }
 
 .project-desc {
     color: #ccc;
     font-size: 14px;
     margin-top: 12px;
+    margin-bottom: 12px;
     line-height: 1.5;
+}
+
+/* кейсы */
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 32px;
+}
+
+.case-card {
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(2px);
+    border-radius: 28px;
+    padding: 24px;
+    border: 1px solid rgba(250,55,218,0.25);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.case-card:hover {
+    transform: translateY(-6px);
+    border-color: #FA37DA;
+    box-shadow: 0 20px 30px -12px rgba(250,55,218,0.2);
+}
+
+.case-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.case-text-block {
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.case-title-p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.case-skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.case-tech {
+    font-size: 12px;
+    font-weight: 500;
+    color: #FA37DA;
+    background: rgba(250, 55, 218, 0.12);
+    padding: 6px 14px;
+    border-radius: 40px;
+    letter-spacing: -0.2px;
+    transition: 0.2s;
+    backdrop-filter: blur(2px);
 }
 
 /* навыки — табы */

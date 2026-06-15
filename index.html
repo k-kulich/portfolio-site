@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Fullstack Python Developer | Automation, Bots, Scraping | C++ | UI/UX</title>
+    <title>Fullstack Developer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -23,15 +25,14 @@
     <div class="cover">
         <div class="hero-wrapper">
             <div class="hero-content">
-                <h1>Fullstack Python Developer</h1>
-                <div class="hero-tagline" id="hero-tagline">Automation, Bots, Scraping | C++ | UI/UX</div>
-                <div class="hero-desc" id="hero-desc">
-                    Студентка ИТМО с факультета прикладной информатики. 3 года фриланса и репетиторства. Разрабатываю десктопные приложения, парсеры, ботов, а ещё учу школьников и студентов математике, физике, информатике и программированию.
+                <h1>Решаю задачи, с которыми не справляются обычные парсеры и боты</h1>
+                <div class="hero-tagline" id="hero-tagline">Обход Cloudflare, капчи, мобильные прокси. Асинхронные телеграм-боты с БД. Fullstack на FastAPI + React.</div>
+                <div class="hero-desc" id="hero-desc-1">Работаю под ключ: от идеи до готового софта или бота.</div>
+                <div class="hero-desc" id="hero-desc-2">
+                    Python-разработчик с коммерческим опытом парсинга Avito, онлайн-казино, доменов в обход антибота.
                 </div>
                 <div class="btn-group">
-                    <a href="#projects" class="btn btn-primary">Проекты</a>
-                    <a href="#contact" class="btn btn-outline">Связаться</a>
-                    <a href="tutoring.html" class="btn btn-outline">Уроки</a>
+                    <a href="#contact" class="btn btn-outline">Заказать разработку</a>
                 </div>
             </div>
             <div class="hero-photo">
@@ -55,14 +56,31 @@
     <!-- Секция проектов -->
     <section id="projects-section">
         <div class="container">
-            <div class="section-title">Избранные <span class="glow-text">проекты</span></div>
-            <div class="section-sub">Десктопные приложения, телеграм-боты, парсеры, контейнеризация</div>
-            <div class="projects-grid" id="projects-grid"></div>
+            <div class="section-title">Избранные <span class="glow-text">решения</span></div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="cases-swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция кейсов -->
+    <section id="cases-section">
+        <div class="container">
+            <div class="section-title">Кейсы</div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="cases-swiper-wrapper"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
     </section>
 
     <!-- Секция навыков (табы) -->
-    <section>
+    <!-- <section>
         <div class="container">
             <div class="section-title">Технический <span class="glow-text">арсенал</span></div>
             <div class="skills-tabs">
@@ -76,15 +94,24 @@
             <div id="design" class="skills-content"></div>
             <div id="devops" class="skills-content"></div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Soft skills (оставим статическими, но можно тоже вынести в JSON) -->
-    <section>
+    <!-- <section>
         <div class="container">
             <div class="section-title">Soft <span class="glow-text">skills</span></div>
             <div class="skills-list" id="soft-skills-list" style="justify-content: center;">
-                <!-- Заполнится из JSON -->
             </div>
+        </div>
+    </section> -->
+
+    <section id="why-me">
+        <div class="container">
+            <div class="section-title">Почему работать со мной</div>
+            <div class="section-sub">Работаю с нестандартными задачами – обход антиботов, мобильные прокси, анализ закрытых API.</div>
+            <div class="section-sub">Полный цикл – от прототипа в Figma до бекенда и деплоя.</div>
+            <div class="section-sub">Соблюдаю дедлайны – опыт фриланса и 3 года репетиторства (доказательство организованности).</div>
+            <div class="section-sub">Всегда на связи – отвечаю в течение часа в рабочее время.</div>
         </div>
     </section>
 
@@ -92,6 +119,9 @@
     <section id="contact">
         <div class="container">
             <div class="section-title">Свяжитесь со <span class="glow-text">мной</span></div>
+            <div class="section-sub">Нужен парсер, бот или автоматизация?
+Напишите в Telegram – обсудим задачу и сроки.
+Бесплатная консультация по ТЗ – 15 минут.</div>
             <div class="contacts-grid" id="contacts-grid"></div>
         </div>
     </section>
