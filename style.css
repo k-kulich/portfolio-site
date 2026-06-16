@@ -318,44 +318,6 @@ section {
     flex-wrap: wrap;
 }
 
-.case-text-block {
-    color: #ccc;
-    font-size: 14px;
-    margin-top: 12px;
-    margin-bottom: 12px;
-    line-height: 1.5;
-}
-
-.case-title-p {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.case-skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 8px;
-}
-
-.case-tech {
-    font-size: 12px;
-    font-weight: 500;
-    color: #FA37DA;
-    background: rgba(250, 55, 218, 0.12);
-    padding: 6px 14px;
-    border-radius: 40px;
-    letter-spacing: -0.2px;
-    transition: 0.2s;
-    backdrop-filter: blur(2px);
-}
-
-/* ===== Карточки кейсов – правильное форматирование ===== */
 .case-card .case-title-p {
     display: block;
     margin: 24px 0 6px 0;
@@ -366,7 +328,7 @@ section {
 }
 
 .case-card .case-title-p:first-of-type {
-    margin-top: 12px; /* отступ от названия кейса */
+    margin-top: 12px;
 }
 
 .case-text-block {
@@ -391,6 +353,18 @@ section {
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 12px;
+}
+
+.case-tech {
+    font-size: 12px;
+    font-weight: 500;
+    color: #FA37DA;
+    background: rgba(250, 55, 218, 0.12);
+    padding: 6px 14px;
+    border-radius: 40px;
+    letter-spacing: -0.2px;
+    transition: 0.2s;
+    backdrop-filter: blur(2px);
 }
 
 /* навыки — табы */
