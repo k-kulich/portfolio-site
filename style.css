@@ -355,6 +355,36 @@ section {
     backdrop-filter: blur(2px);
 }
 
+/* Стили для карточек кейсов */
+.case-card .case-title-p {
+    margin: 24px 0 8px 0;
+    font-weight: 600;
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+.case-card .case-title-p:first-of-type {
+    margin-top: 12px; /* чтобы не было слишком большого отступа от названия кейса */
+}
+
+.case-text-block {
+    margin-bottom: 16px;
+    color: #ccc;
+}
+
+.case-text-block p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.case-text-block p:last-child {
+    margin-bottom: 0;
+}
+
+.case-skill-list {
+    margin-top: 12px;
+}
+
 /* навыки — табы */
 .skills-tabs {
     display: flex;
