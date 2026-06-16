@@ -355,25 +355,30 @@ section {
     backdrop-filter: blur(2px);
 }
 
-/* Стили для карточек кейсов */
+/* ===== Карточки кейсов – правильное форматирование ===== */
 .case-card .case-title-p {
-    margin: 24px 0 8px 0;
+    display: block;
+    margin: 24px 0 6px 0;
     font-weight: 600;
     font-size: 18px;
     color: #f0f0f0;
+    clear: both;
 }
 
 .case-card .case-title-p:first-of-type {
-    margin-top: 12px; /* чтобы не было слишком большого отступа от названия кейса */
+    margin-top: 12px; /* отступ от названия кейса */
 }
 
 .case-text-block {
+    display: block;
     margin-bottom: 16px;
     color: #ccc;
+    line-height: 1.5;
 }
 
 .case-text-block p {
-    margin-bottom: 8px;
+    display: block;
+    margin: 0 0 8px 0;
     line-height: 1.6;
 }
 
@@ -382,6 +387,9 @@ section {
 }
 
 .case-skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-top: 12px;
 }
 

@@ -49,11 +49,11 @@ function renderCases(swiperWrapperId, casesArray) {
     <div class="swiper-slide">
         <div class="case-card">
             <div class="case-title">${caseItem.title}</div>
-            <div class="case-title-p"><p>\nЗадача</p></div>
+            <div class="case-title-p"><p>Задача</p></div>
             <div class="case-text-block">${formatTextToParagraphs(caseItem.task)}</div>
-            <div class="case-title-p"><p>\nМоё решение</p></div>
+            <div class="case-title-p"><p>Моё решение</p></div>
             <div class="case-text-block">${caseItem.solution.map(point => `<p>${point}</p>`).join('')}</div>
-            <div class="case-title-p"><p>\nРезультат</p></div>
+            <div class="case-title-p"><p>Результат</p></div>
             <div class="case-text-block">${formatTextToParagraphs(caseItem.result)}</div>
             <div class="case-skill-list">${caseItem.tech.map(ite => `<span class="case-tech">${ite}</span>`).join('')}</div>
         </div>
