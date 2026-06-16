@@ -368,6 +368,38 @@ section {
     backdrop-filter: blur(2px);
 }
 
+/* ===== Красивые маркеры для списка решений ===== */
+.case-solution-list {
+    list-style: none;           /* убираем стандартные маркеры */
+    padding-left: 0;
+    margin: 8px 0 0 0;
+}
+
+.case-solution-list li {
+    position: relative;
+    padding-left: 28px;        /* место для кастомного маркера */
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.case-solution-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;                  /* выравнивание по центру первой строки */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #FA37DA, #4C37FA);
+    box-shadow: 0 0 8px rgba(250, 55, 218, 0.4);
+    flex-shrink: 0;
+}
+
+.case-solution-list li:last-child {
+    margin-bottom: 0;
+}
+
 /* навыки — табы */
 .skills-tabs {
     display: flex;
