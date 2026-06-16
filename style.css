@@ -300,6 +300,7 @@ section {
     transition: all 0.25s ease;
     display: flex;
     flex-wrap: wrap;
+    flex: auto;
 }
 
 .case-card:hover {
